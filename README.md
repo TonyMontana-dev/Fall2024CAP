@@ -18,7 +18,7 @@ Fall 2024 Capstone Project
    - eslint
    - eslint-config-next.
 
-   - All were installed by running the command: `npx create-next-app@latest capstone-project`.
+   All were installed by running the command: `npx create-next-app@latest capstone-project`.
 
 3. **Hello World**:
    I edited the text of the default page adding my name.
