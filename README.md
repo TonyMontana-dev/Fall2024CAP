@@ -1,8 +1,6 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-Fall 2024 Capstone Project
-
 ## Progress Update: 09/23/2024
 
 This week as suggested by the professor, I have been researching more material to develop a research project related to the implementation of encryption algorithms for a website.
