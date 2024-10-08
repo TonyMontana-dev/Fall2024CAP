@@ -1,20 +1,24 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-## Progress Update: 09/30/2024
+## Progress Update: 10/07/2024
 
-This week as suggested by the professor, I have been researching more material to develop a research project related to the implementation of encryption algorithms for a website.
+This week I have been looking up various methods to implement algorithms for symmetric encryption using Python. The first method is the encryption and decryption of files using the cryptography library. The following is the link to the Python library: https://pypi.org/project/cryptography/ 
+An interesting blog post for how to implement a symmetric encryption algorithm: https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python 
+This is a step-by-step guide on how to implement an encryption and decryption method algorithm for files. 
 
-In order to develop the ideas described in previous updates, I have researched some important aspects. The website therefore the front-end side would be developed using Next.js while the back-end can be done either with Javascript or Python. However, it is suggested to consider Python for cryptography since it provides better libraries and security. Javascript works more toward the client side therefore it holds vulnerabilities related also to the user’s browser. While Python is server-side. Therefore has vulnerabilities related to servers. However, some mitigations can help prevent security breaches in both languages, such as using HTTPS for communication with the server or client side therefore encrypting the traffic over the network. Some encryption algorithms that could be used for the project are but are not limited to AES-256 bit, RSA/RSA, ECC, and more. 
+Another important library for the implementation of AES-256 and ChaCha20 algorithms is pycryptodome: https://pypi.org/project/pycryptodome/ 
+https://pycryptodome.readthedocs.io/en/latest/src/cipher/aes.html This is the documentation for the implementation of the AES algorithm with various methods using Python.
 
-Some important considerations are:
+https://csrc.nist.gov/files/pubs/fips/197/final/docs/fips-197.pdf This is a document created by NIST with the specifications for AES encryption. While the following: https://www.nist.gov/news-events/news/2022/07/nist-announces-first-four-quantum-resistant-cryptographic-algorithms is an article by NIST presenting new algorithms which are defined to be quantum-resistant encryption.
 
-Post-Quantum Cryptography: While the above algorithms are secure today, quantum computing poses a threat to RSA and ECC in the future. AES-256 and ChaCha20 are considered more resistant to quantum attacks. If you're considering future-proofing beyond 10-20 years, quantum-safe algorithms like lattice-based cryptography will become important, but these are still in the research phase and aren't yet commonly implemented.
+Some interesting further implementations are: 
+https://github.com/gaetanserre/AES_256-Python This is an implementation of the AES-256 algorithm which will encrypt/decrypt any kind of file or files.
 
-Efficiency and Scalability: For most web applications and file sizes, AES-256 or ChaCha20-Poly1305 will give you the performance you need. Asymmetric encryption (RSA or ECC) should be used for key exchange only, not for encrypting large files.
+Also, I have been looking up at Steganography implementation in Python. Steganography is not considered the most secure method to encrypt files. However, it can be useful and deceptive to malicious actors as it can hide itself. https://www.javatpoint.com/image-steganography-using-python This link demonstrates an implementation of such a method and how it works. 
 
-It is important to value the evolution of technology in the future especially in cryptography since quantum computers will change the way we secure our network and contents therefore the website must be compliant with current days and future vulnerabilities.
-
+The project will be focused on implementing an algorithm that is classified as state-of-the-art, and it provides the best method to keep secure files, images, plaintext, audio, etc…
+Also, it will be challenging, however, the idea is to create a website that will provide a tool for the encryption and decryption of various file types. The website will have to take into account vulnerabilities such as storing keys locally instead of a server. However, it will also provide a database to store temporary files as defined by the user at its own risk. 
 
 ## From the previous update:
 Currently, the idea is to work on a website related to cybersecurity.
@@ -32,6 +36,16 @@ The second idea is a website for encryption and decryption of files using stegan
 A web application that hides sensitive data within an image, audio, or other file formats. The user uploads a file and text (or another file) to hide, and the site generates a new file that looks identical but contains hidden information.
 
 For this idea one library available is steganography.js
+
+In order to develop the ideas described in previously, I have researched some important aspects. The website therefore the front-end side would be developed using Next.js while the back-end can be done either with Javascript or Python. However, it is suggested to consider Python for cryptography since it provides better libraries and security. Javascript works more toward the client side therefore it holds vulnerabilities related also to the user’s browser. While Python is server-side. Therefore has vulnerabilities related to servers. However, some mitigations can help prevent security breaches in both languages, such as using HTTPS for communication with the server or client side therefore encrypting the traffic over the network. Some encryption algorithms that could be used for the project are but are not limited to AES-256 bit, RSA/RSA, ECC, and more. 
+
+Some important considerations are:
+
+Post-Quantum Cryptography: While the above algorithms are secure today, quantum computing poses a threat to RSA and ECC in the future. AES-256 and ChaCha20 are considered more resistant to quantum attacks. If you're considering future-proofing beyond 10-20 years, quantum-safe algorithms like lattice-based cryptography will become important, but these are still in the research phase and aren't yet commonly implemented.
+
+Efficiency and Scalability: For most web applications and file sizes, AES-256 or ChaCha20-Poly1305 will give you the performance you need. Asymmetric encryption (RSA or ECC) should be used for key exchange only, not for encrypting large files.
+
+It is important to value the evolution of technology in the future especially in cryptography since quantum computers will change the way we secure our network and contents therefore the website must be compliant with current days and future vulnerabilities.
 
 Other materials for the project are:
 https://envshare.dev/ This is a website demo similar to the idea I would like to develop. This is a website where you can encrypt and share temporary environment variables without compromising security. 
