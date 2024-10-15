@@ -1,9 +1,16 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-## Progress Update: 10/07/2024
+## Progress Update: 10/14/2024
 
-This week I have been looking up various methods to implement algorithms for symmetric encryption using Python. The first method is the encryption and decryption of files using the cryptography library. The following is the link to the Python library: https://pypi.org/project/cryptography/ 
+This week I have implemented a testing program of the AES-256 algorithm following the tutorial given at https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python. The program was written using Python and it created a salt key used to encrypt and decrypt. The salt key is what defines the symmetric encryption algorithm. It is used to encrypt and decrypt, if it changes the decryption process won’t be possible. In contrast, asymmetric encryption requires two different keys. In this first program test, I have tested to encrypt a pdf file and decrypt it. The program can encrypt/decrypt any kind of file format, giving the possibility to secure all types of information, from PDFs, ZIP, PNGs, JPEGs, and more.
+
+A video demonstration was submitted to demonstrate how the program works. Also, the program contains comments explaining how it works, and what each line does.
+
+For next week I will work on refining the program and test it with more features. Then collect more material in order to make this program functional and implement it into a website.
+
+## From the previous update:
+Last week I have been looking up various methods to implement algorithms for symmetric encryption using Python. The first method is the encryption and decryption of files using the cryptography library. The following is the link to the Python library: https://pypi.org/project/cryptography/ 
 An interesting blog post for how to implement a symmetric encryption algorithm: https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python 
 This is a step-by-step guide on how to implement an encryption and decryption method algorithm for files. 
 
@@ -20,7 +27,6 @@ Also, I have been looking up at Steganography implementation in Python. Steganog
 The project will be focused on implementing an algorithm that is classified as state-of-the-art, and it provides the best method to keep secure files, images, plaintext, audio, etc…
 Also, it will be challenging, however, the idea is to create a website that will provide a tool for the encryption and decryption of various file types. The website will have to take into account vulnerabilities such as storing keys locally instead of a server. However, it will also provide a database to store temporary files as defined by the user at its own risk. 
 
-## From the previous update:
 Currently, the idea is to work on a website related to cybersecurity.
 The ideas can expand to but not limited to:
 A simple encryption and decryption tool using a single encryption algorithm (for example AES, RSA, etc…)
