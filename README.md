@@ -1,16 +1,37 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-## Progress Update: 10/14/2024
+## Progress Update: 10/21/2024
 
-This week I have implemented a testing program of the AES-256 algorithm following the tutorial given at https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python. The program was written using Python and it created a salt key used to encrypt and decrypt. The salt key is what defines the symmetric encryption algorithm. It is used to encrypt and decrypt, if it changes the decryption process won’t be possible. In contrast, asymmetric encryption requires two different keys. In this first program test, I have tested to encrypt a pdf file and decrypt it. The program can encrypt/decrypt any kind of file format, giving the possibility to secure all types of information, from PDFs, ZIP, PNGs, JPEGs, and more.
+This week I have been continuing to look for new material. I have started building the main structure of the research, and as per the previous week created a test of an AES256 encryption algorithm. Interestingly I have found new material that will help make the algorithm in Python more efficient and secure in order to be implemented in the website.
+
+The following are the links to two examples of an AES256 python script, one is a YouTube video on how to implement the algorithm, last is a NIST article related to Post-Quantum encryption standards.
+https://stackoverflow.com/questions/12524994/encrypt-and-decrypt-using-pycrypto-aes-256 
+https://github.com/gaetanserre/AES_256-Python/blob/master/src/AES.py 
+https://www.youtube.com/watch?v=F2av7TaVc5Q 
+https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards 
+
+The following is a piece of the research retrieved this week while considering the future and what will be the beginning of quantum computers.
+There are three main algorithms that as of today are said to be quantum resistant or at least state-of-the-art in encryption.
+
+As noted in previous updates, quantum computers are a threat to our current safety through encryption. However, at the same time, the future is unforeseeable.
+Therefore, this is an exhaustive tentative in creating a website that follows the standards of encryption and minimizes all the known vulnerabilities.
+
+AES-256
+Considered quantum resistant until at least 2050. AES is the standard encryption algorithm used by the U.S. government and many other organizations. 
+Lattice-based cryptography
+Uses mathematical problems that are believed to be resistant to quantum attacks. NTRUEncrypt is a well-known lattice-based encryption algorithm. 
+Post-quantum cryptography (PQC)
+Uses mathematical algorithms that are designed to be secure against quantum computers. The National Institute of Standards and Technology (NIST) has finalized a set of PQC algorithms, including ML-KEM, ML-DSA, and SLH-DSA. NIST is also developing a fourth algorithm, FN-DSA, which is expected to be officially named in late 2024. 
+
+## From the previous update:
+Last week I have implemented a testing program of the AES-256 algorithm following the tutorial given at https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python. The program was written using Python and it created a salt key used to encrypt and decrypt. The salt key is what defines the symmetric encryption algorithm. It is used to encrypt and decrypt, if it changes the decryption process won’t be possible. In contrast, asymmetric encryption requires two different keys. In this first program test, I have tested to encrypt a pdf file and decrypt it. The program can encrypt/decrypt any kind of file format, giving the possibility to secure all types of information, from PDFs, ZIP, PNGs, JPEGs, and more.
 
 A video demonstration was submitted to demonstrate how the program works. Also, the program contains comments explaining how it works, and what each line does.
 
 For next week I will work on refining the program and test it with more features. Then collect more material in order to make this program functional and implement it into a website.
 
-## From the previous update:
-Last week I have been looking up various methods to implement algorithms for symmetric encryption using Python. The first method is the encryption and decryption of files using the cryptography library. The following is the link to the Python library: https://pypi.org/project/cryptography/ 
+The following are various methods to implement algorithms for symmetric encryption using Python. The first method is the encryption and decryption of files using the cryptography library. The following is the link to the Python library: https://pypi.org/project/cryptography/ 
 An interesting blog post for how to implement a symmetric encryption algorithm: https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python 
 This is a step-by-step guide on how to implement an encryption and decryption method algorithm for files. 
 
