@@ -21,12 +21,17 @@ import getpass
 # The `generate_salt` function generates a random salt of a specified size.
 def generate_salt(size=16):
     """Generate the salt used for key derivation, 
-    `size` is the length of the salt to generate"""
+    `size` is the length of the salt to generate and is returned as bytes."""
     return secrets.token_bytes(size)
 
 # The `derive_key` function generates a key from a password and a salt using the Scrypt key derivation function.
 def derive_key(salt, password):
-    """Derive the key from the `password` using the passed `salt`"""
+    """Derive the key from the `password` using the passed `salt`
+        Salt is 16 bytes long, key length is 32 bytes (or 256 bits)
+        n stands for the number of iterations
+        r is the block size
+        p is the parallelization factor.
+    """
     kdf = Scrypt(salt=salt, length=32, n=2**14, r=8, p=1)
     return kdf.derive(password.encode())
 
