@@ -1,9 +1,25 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-## Progress Update: 10/21/2024
+## Progress Update: 11/06/2024
 
-This week I have been continuing to look for new material. I have started building the main structure of the research, and as per the previous week created a test of an AES256 encryption algorithm. Interestingly I have found new material that will help make the algorithm in Python more efficient and secure in order to be implemented in the website.
+This week I have been creating the first draft of the Project Manual. I have formatted the document with the manual outline and completed various sections. Starting with the introduction and part of the research for the project. Also described and listed the technologies, such as the dependencies, framework, programming languages, and features that will be used for the creation of this project. Lastly, I described what future implementations could be done to expand the project to be more community-focused. The project manual draft can be found either in the submission file or on the Fall2024CAP (this repository) GitHub repository.
+
+I have found another interesting project which can be a demonstration of encryption/decryption of files. It is called Hat.sh (https://hat.sh/) and provides a similar service. However, it does not have a shareable link, does not have an expiration date, does not have an X count of decryptions, nor does it store it temporarily in a database.
+
+The following are a few interesting articles that I have collected, along with a NIST document for understanding the standards for AES-256 implementation:
+https://www.internetsociety.org/resources/doc/2020/fact-sheet-how-encryption-can-protect-journalists-and-the-free-press/ 
+https://www.geeksforgeeks.org/advanced-encryption-standard-aes/ 
+https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197-upd1.pdf 
+
+## From the previous update:
+Last week I have created the beginning of the draft for the research paper related to the project I am creating. I have also found a template made for next.js which is https://envshare.dev/. This project is interesting because it can be cloned and deployed while having a basic project structure related to encryption and decryption. It will require various modifications, such as making the encryption algorithm from Typescript to Python and changing the input for encryption to all kinds of files instead of just text. The following is my repository cloned from this project: https://github.com/TonyMontana-dev/cipher-share and the deployed URL: https://cipher-share-six.vercel.app/. At the moment, the idea is to use this template as a base structure for the demo website, or as an inspiration for it. 
+
+To clone the Envshare template, I had to create an Upstash account in order to generate a Redis database. The database will be useful as we will temporarily store the files to be encrypted and decrypted for a selected period of time. Once created the Upstash account, will need Vercel in order to create and deploy the repository cloned into our GitHub account. Once deployed successfully, I was able to clone it into my machine and start editing the details required to create the project.
+
+I am also working on a script written in Python to be used for the website. The current goal for next week is to revise all material collected and build the first 1000 words of the draft for the project manual.
+
+ Some of the material collected for the research. I have started building the main structure of the research, and as per the previous week created a test of an AES256 encryption algorithm. Interestingly I have found new material that will help make the algorithm in Python more efficient and secure in order to be implemented in the website.
 
 The following are the links to two examples of an AES256 python script, one is a YouTube video on how to implement the algorithm, last is a NIST article related to Post-Quantum encryption standards.
 https://stackoverflow.com/questions/12524994/encrypt-and-decrypt-using-pycrypto-aes-256 
@@ -24,8 +40,7 @@ Uses mathematical problems that are believed to be resistant to quantum attacks.
 Post-quantum cryptography (PQC)
 Uses mathematical algorithms that are designed to be secure against quantum computers. The National Institute of Standards and Technology (NIST) has finalized a set of PQC algorithms, including ML-KEM, ML-DSA, and SLH-DSA. NIST is also developing a fourth algorithm, FN-DSA, which is expected to be officially named in late 2024. 
 
-## From the previous update:
-Last week I have implemented a testing program of the AES-256 algorithm following the tutorial given at https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python. The program was written using Python and it created a salt key used to encrypt and decrypt. The salt key is what defines the symmetric encryption algorithm. It is used to encrypt and decrypt, if it changes the decryption process won’t be possible. In contrast, asymmetric encryption requires two different keys. In this first program test, I have tested to encrypt a pdf file and decrypt it. The program can encrypt/decrypt any kind of file format, giving the possibility to secure all types of information, from PDFs, ZIP, PNGs, JPEGs, and more.
+In the previous weeks I have implemented a testing program of the AES-256 algorithm following the tutorial given at https://thepythoncode.com/article/encrypt-decrypt-files-symmetric-python. The program was written using Python and it created a salt key used to encrypt and decrypt. The salt key is what defines the symmetric encryption algorithm. It is used to encrypt and decrypt, if it changes the decryption process won’t be possible. In contrast, asymmetric encryption requires two different keys. In this first program test, I have tested to encrypt a pdf file and decrypt it. The program can encrypt/decrypt any kind of file format, giving the possibility to secure all types of information, from PDFs, ZIP, PNGs, JPEGs, and more.
 
 A video demonstration was submitted to demonstrate how the program works. Also, the program contains comments explaining how it works, and what each line does.
 
@@ -79,4 +94,4 @@ https://envshare.dev/ This is a website demo similar to the idea I would like to
 https://cryptojs.gitbook.io/docs This is a popular library for encryption methods built in javascript which can be used to develop various methods for both encryption and decryption.
 
 ### Goal for next week:
-   - Continuing to research new material and ideas for the website project and best practices to implement encryption algorithms.
+   - Edit the website and incorporate new changes
