@@ -3,9 +3,9 @@ Fall 2024 Capstone Project
 
 ## Progress Update: 11/06/2024
 
-This week I have been creating the first draft of the Project Manual. I have formatted the document with the manual outline and completed various sections. Starting with the introduction and part of the research for the project. Also described and listed the technologies, such as the dependencies, framework, programming languages, and features that will be used for the creation of this project. Lastly, I described what future implementations could be done to expand the project to be more community-focused. The project manual draft can be found either in the submission file or on the Fall2024CAP GitHub repository.
+This week I have been creating the first draft of the Project Manual. I have formatted the document with the manual outline and completed various sections. Starting with the introduction and part of the research for the project. Also described and listed the technologies, such as the dependencies, framework, programming languages, and features that will be used for the creation of this project. Lastly, I described what future implementations could be done to expand the project to be more community-focused. The project manual draft can be found either in the submission file or on the Fall2024CAP (this repository) GitHub repository.
 
-I have found another interesting project which can be a demonstration of encryption/decryption of files. It is called Hat.sh and provides a similar service. However, it does not have a shareable link, does not have an expiration date, does not have an X count of decryptions, nor does it store it temporarily in a database.
+I have found another interesting project which can be a demonstration of encryption/decryption of files. It is called Hat.sh (https://hat.sh) and provides a similar service. However, it does not have a shareable link, does not have an expiration date, does not have an X count of decryptions, nor does it store it temporarily in a database.
 
 The following are a few interesting articles that I have collected, along with a NIST document for understanding the standards for AES-256 implementation:
 https://www.internetsociety.org/resources/doc/2020/fact-sheet-how-encryption-can-protect-journalists-and-the-free-press/ 
