@@ -1,19 +1,34 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-## Progress Update: 11/06/2024
+## Progress Update: 11/13/2024
 
-This week I have been creating the first draft of the Project Manual. I have formatted the document with the manual outline and completed various sections. Starting with the introduction and part of the research for the project. Also described and listed the technologies, such as the dependencies, framework, programming languages, and features that will be used for the creation of this project. Lastly, I described what future implementations could be done to expand the project to be more community-focused. The project manual draft can be found either in the submission file or on the Fall2024CAP (this repository) GitHub repository.
+In previous weeks I have cloned the envshare.dev website repository and tried to understand its logic. I wanted to clone this repository because the website has some of the features I was looking for and it is similar to the website I am creating. This week I created a new repository with a new Next.js project and I have implemented most of the website demo. There are various adjustments to be made, but the general idea of what I researched was implemented.
 
-I have found another interesting project which can be a demonstration of encryption/decryption of files. It is called Hat.sh (https://hat.sh/) and provides a similar service. However, it does not have a shareable link, does not have an expiration date, does not have an X count of decryptions, nor does it store it temporarily in a database.
+I started by creating a new project with Next.js using the latest version available. Then I started building the main layout and index page for the website with a navigation menu with the following pages:
+Encode (where we will encrypt our files)
+Decode (where we will decrypt our files)
+Community (A simple page to interact with people in questions & answers regarding the topic of Cybersecurity/Privacy/Security)
+A GitHub redirection link for my profile (specifically at the repository).
+
+Along with the pages I have created various Python scripts in order to make the encryption algorithm work. Primarily I chose to implement the AES256 algorithm using a password along with a key to encrypt any kind of files and store it inside the Redis database. For this project, I used the same Redis database I created in the previous weeks when I cloned the envshare project. The following are the pages I have made to store, load, encrypt, and decrypt the files the users want to encrypt/decrypt. 
+
+load.py, utils.py, store.py, and posts.py. All these files are required to encrypt, decrypt, post, comment, and load content from the Redis database to our front-end user interface. Finally, we use Flask to create a server where we can make our website communicate with the Python scripts and the Redis database. I am still currently working on the best practices to implement this project. Therefore, I might revise the database setup and maybe change it to a more flexible and scalable option. However, at the moment the demo website seems to work aside from a few errors and bugs. The main problem is that the website cannot handle files larger than 1MB. Which is quite a problem. Below I will share the link to the repository of the website repository and a video to give it a look at how it works.
+https://github.com/TonyMontana-dev/ciphare (Repository to the demo website, currently not deployed on any hosting service. Soon will be deployed to production using Vercel)
+
+More information inside submission file.
+
+## From the previous update:
+Last week I created the first draft of the Project Manual. I have formatted the document with the manual outline and completed various sections. Starting with the introduction and part of the research for the project. Also described and listed the technologies, such as the dependencies, framework, programming languages, and features that will be used for the creation of this project. Lastly, I described what future implementations could be done to expand the project to be more community-focused. The project manual draft can be found either in the submission file or on the Fall2024CAP GitHub repository.
+
+I have found another interesting project which can be a demonstration of encryption/decryption of files. It is called Hat.sh and provides a similar service. However, it does not have a shareable link, does not have an expiration date, does not have an X count of decryptions, nor does it store it temporarily in a database.
 
 The following are a few interesting articles that I have collected, along with a NIST document for understanding the standards for AES-256 implementation:
 https://www.internetsociety.org/resources/doc/2020/fact-sheet-how-encryption-can-protect-journalists-and-the-free-press/ 
 https://www.geeksforgeeks.org/advanced-encryption-standard-aes/ 
 https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197-upd1.pdf 
 
-## From the previous update:
-Last week I have created the beginning of the draft for the research paper related to the project I am creating. I have also found a template made for next.js which is https://envshare.dev/. This project is interesting because it can be cloned and deployed while having a basic project structure related to encryption and decryption. It will require various modifications, such as making the encryption algorithm from Typescript to Python and changing the input for encryption to all kinds of files instead of just text. The following is my repository cloned from this project: https://github.com/TonyMontana-dev/cipher-share and the deployed URL: https://cipher-share-six.vercel.app/. At the moment, the idea is to use this template as a base structure for the demo website, or as an inspiration for it. 
+I have created the beginning of the draft for the research paper related to the project I am creating. I have also found a template made for next.js which is https://envshare.dev/. This project is interesting because it can be cloned and deployed while having a basic project structure related to encryption and decryption. It will require various modifications, such as making the encryption algorithm from Typescript to Python and changing the input for encryption to all kinds of files instead of just text. The following is my repository cloned from this project: https://github.com/TonyMontana-dev/cipher-share and the deployed URL: https://cipher-share-six.vercel.app/. At the moment, the idea is to use this template as a base structure for the demo website, or as an inspiration for it. 
 
 To clone the Envshare template, I had to create an Upstash account in order to generate a Redis database. The database will be useful as we will temporarily store the files to be encrypted and decrypted for a selected period of time. Once created the Upstash account, will need Vercel in order to create and deploy the repository cloned into our GitHub account. Once deployed successfully, I was able to clone it into my machine and start editing the details required to create the project.
 
