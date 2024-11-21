@@ -1,8 +1,24 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-## Progress Update: 11/13/2024
+## Progress Update: 11/20/2024
 
+Last week I shared the main structure of the website. This week I spent some time understanding how to handle the database problem regarding the maximum limit size for requests. Unfortunately, using the Redis database through Upstash.com with a free tier I cannot exceed the 1MB limit size for requests. Therefore I cannot test the website with larger files unless I upgrade the membership to a paid one. 
+
+Hence this week I researched some alternatives to the Redis database. I was able to find MongoDB, PostgreSQL, SQLite, Firestore/Firebase, and Supabase. There are also other options, however, I am looking for free solutions while maintaining the website scalable for future improvements.
+
+The following are the URLs of the database I researched:
+https://www.mongodb.com/
+https://firebase.google.com/
+https://www.sqlite.org/index.html
+https://www.postgresql.org/
+https://supabase.com/ 
+
+Since when trying to encrypt large files I received an error related to the stack size max limit. I have updated the Encode and Decode pages to address the file size limit issues and improve overall functionality. On the Encode page, I have reworked the file handling process to efficiently convert files into Base64 format. This change resolved the "RangeError: Maximum call stack size exceeded" error. Moreover, I have updated the backend communication to include metadata such as the original file name and MIME type, ensuring that the encrypted data retains essential file information.
+
+On the Decode page, I have updated the decryption logic to handle the metadata received from the backend. The decrypted data is now reconstructed into its original binary format and downloaded with the correct file name and type. These improvements ensure that users can upload, encrypt, decrypt, and download files without losing integrity or metadata. Unfortunately, my free tier plan blocks me from properly testing the encryption and decryption of larger files.
+
+## From the previous update:
 In previous weeks I have cloned the envshare.dev website repository and tried to understand its logic. I wanted to clone this repository because the website has some of the features I was looking for and it is similar to the website I am creating. This week I created a new repository with a new Next.js project and I have implemented most of the website demo. There are various adjustments to be made, but the general idea of what I researched was implemented.
 
 I started by creating a new project with Next.js using the latest version available. Then I started building the main layout and index page for the website with a navigation menu with the following pages:
@@ -18,8 +34,7 @@ https://github.com/TonyMontana-dev/ciphare (Repository to the demo website, curr
 
 More information inside submission file.
 
-## From the previous update:
-Last week I created the first draft of the Project Manual. I have formatted the document with the manual outline and completed various sections. Starting with the introduction and part of the research for the project. Also described and listed the technologies, such as the dependencies, framework, programming languages, and features that will be used for the creation of this project. Lastly, I described what future implementations could be done to expand the project to be more community-focused. The project manual draft can be found either in the submission file or on the Fall2024CAP GitHub repository.
+I created the first draft of the Project Manual. I have formatted the document with the manual outline and completed various sections. Starting with the introduction and part of the research for the project. Also described and listed the technologies, such as the dependencies, framework, programming languages, and features that will be used for the creation of this project. Lastly, I described what future implementations could be done to expand the project to be more community-focused. The project manual draft can be found either in the submission file or on the Fall2024CAP GitHub repository.
 
 I have found another interesting project which can be a demonstration of encryption/decryption of files. It is called Hat.sh and provides a similar service. However, it does not have a shareable link, does not have an expiration date, does not have an X count of decryptions, nor does it store it temporarily in a database.
 
