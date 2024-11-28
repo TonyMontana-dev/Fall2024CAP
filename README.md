@@ -1,11 +1,39 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-## Progress Update: 11/20/2024
+## Progress Update: 11/27/2024
 
-Last week I shared the main structure of the website. This week I spent some time understanding how to handle the database problem regarding the maximum limit size for requests. Unfortunately, using the Redis database through Upstash.com with a free tier I cannot exceed the 1MB limit size for requests. Therefore I cannot test the website with larger files unless I upgrade the membership to a paid one. 
+This week I worked on fixing and adjusting the project manual. Adding sections to the manual and new content (check on /Project-Documents folder). I also worked on the website demo itself. Currently, I am facing a problem related to the community page. Everything seems to be working correctly, aside from the comments under the posts published by users. 
 
-Hence this week I researched some alternatives to the Redis database. I was able to find MongoDB, PostgreSQL, SQLite, Firestore/Firebase, and Supabase. There are also other options, however, I am looking for free solutions while maintaining the website scalable for future improvements.
+During testing phases, when commenting the correct POST request is confirmed and received by the database with the content of the packet. Yet in the front end, it is not visible.
+
+These are the following error lines returned by the Flask server terminal:
+
+The first one is the positive call made to make a post in the community page:
+127.0.0.1 - - [28/Nov/2024 00:55:22] "OPTIONS /api/v1/posts HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2024 00:55:23] "POST /api/v1/posts HTTP/1.1" 201 -
+127.0.0.1 - - [28/Nov/2024 00:55:23] "GET /api/v1/posts HTTP/1.1" 200 -
+
+
+As we can see we could post and GET therefore view our post. I can like the post which will return the following confirmation:
+127.0.0.1 - - [28/Nov/2024 00:57:09] "POST /api/v1/posts/paFNYv736-AKxw_voQZnOA/like HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2024 00:57:09] "GET /api/v1/posts HTTP/1.1" 200 -
+
+
+But when we comment: 
+127.0.0.1 - - [28/Nov/2024 00:58:46] "OPTIONS /api/v1/posts/paFNYv736-AKxw_voQZnOA/comment HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2024 00:58:47] "POST /api/v1/posts/paFNYv736-AKxw_voQZnOA/comment HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2024 00:58:47] "GET /api/v1/posts HTTP/1.1" 200 -
+
+
+We can see the input was received and confirmed by the server. However, I cannot see it on the front-end side. I am currently navigating through forums and trying certain changes on the main structure of the community page.tsx. 
+
+The updated project manual is available on the GitHub repository.
+
+## From the previous update:
+Two weeks ago I shared the main structure of the website. This week I spent some time understanding how to handle the database problem regarding the maximum limit size for requests. Unfortunately, using the Redis database through Upstash.com with a free tier I cannot exceed the 1MB limit size for requests. Therefore I cannot test the website with larger files unless I upgrade the membership to a paid one. 
+
+Hence last week I researched some alternatives to the Redis database. I was able to find MongoDB, PostgreSQL, SQLite, Firestore/Firebase, and Supabase. There are also other options, however, I am looking for free solutions while maintaining the website scalable for future improvements.
 
 The following are the URLs of the database I researched:
 https://www.mongodb.com/
@@ -18,8 +46,7 @@ Since when trying to encrypt large files I received an error related to the stac
 
 On the Decode page, I have updated the decryption logic to handle the metadata received from the backend. The decrypted data is now reconstructed into its original binary format and downloaded with the correct file name and type. These improvements ensure that users can upload, encrypt, decrypt, and download files without losing integrity or metadata. Unfortunately, my free tier plan blocks me from properly testing the encryption and decryption of larger files.
 
-## From the previous update:
-In previous weeks I have cloned the envshare.dev website repository and tried to understand its logic. I wanted to clone this repository because the website has some of the features I was looking for and it is similar to the website I am creating. This week I created a new repository with a new Next.js project and I have implemented most of the website demo. There are various adjustments to be made, but the general idea of what I researched was implemented.
+In previous weeks, I have cloned the envshare.dev website repository and tried to understand its logic. I wanted to clone this repository because the website has some of the features I was looking for and it is similar to the website I am creating. This week I created a new repository with a new Next.js project and I have implemented most of the website demo. There are various adjustments to be made, but the general idea of what I researched was implemented.
 
 I started by creating a new project with Next.js using the latest version available. Then I started building the main layout and index page for the website with a navigation menu with the following pages:
 Encode (where we will encrypt our files)
