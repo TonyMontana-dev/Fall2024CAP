@@ -1,7 +1,9 @@
 # Fall2024CAP
 Fall 2024 Capstone Project
 
-## Progress Update: 11/27/2024
+## Progress Update: 12/11/2024
+
+This week I have worked on last parts of the project manual. I have also finished and polished most parts of the website development side, both back-end and front-end work correctly. A fix is required for the community page on the comment section. Moreover, additional implementations will be added throughout time. All files and content are available in the respective folders and repository. The link for the Ciphare website is available here: https://github.com/TonyMontana-dev/ciphare/
 
 This week I worked on fixing and adjusting the project manual. Adding sections to the manual and new content (check on /Project-Documents folder). I also worked on the website demo itself. Currently, I am facing a problem related to the community page. Everything seems to be working correctly, aside from the comments under the posts published by users. 
 
